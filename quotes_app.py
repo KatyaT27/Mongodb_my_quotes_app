@@ -5,7 +5,7 @@ import pymongo
 
 
 # MongoDB connection settings
-MONGO_URI = "mongodb+srv://web13user:MXiZgtXDqEC5hN8U@cluster0.kgddv8w.mongodb.net/"
+MONGO_URI = "mongodb+srv://web13user:1234@cluster0.kgddv8w.mongodb.net/"
 DB_NAME = "web13"
 
 # Function to load JSON data into MongoDB
