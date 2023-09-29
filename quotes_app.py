@@ -12,6 +12,7 @@ DB_NAME = "web13"
 
 
 # Define Mongoengine models for authors and quotes
+# Define Mongoengine models for authors and quotes
 class Author(Document):
     fullname = StringField(required=True)
     born_date = StringField()
@@ -31,6 +32,7 @@ connect(DB_NAME, host=MONGO_URI)
 # Function to load JSON data into MongoDB
 
 
+# Function to load JSON data into MongoDB
 def load_data_from_json(file_path, collection_name):
     with open(file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
@@ -44,22 +46,21 @@ def load_data_from_json(file_path, collection_name):
         if collection:
             for item in data:
                 if collection_name == 'quotes':
-                    # Find the author in the Author collection and set it as a ReferenceField
-                    author = Author.objects(fullname=item['author']).first()
-                    if author:
+                    author_name = item.get('author')
+                    if author := Author.objects(fullname=author_name).first():
                         item['author'] = author
                     else:
                         print(
-                            f"Author '{item['author']}' not found for quote: {item['quote']}")
+                            f"Author '{author_name}' not found for quote: {item['quote']}")
 
                 collection(**item).save()
 
 
 # Load authors from a JSON file into MongoDB
-load_data_from_json('web13/authors.json', 'authors')
+# load_data_from_json('authors.json', 'authors')
 
 # Load quotes from a JSON file into MongoDB
-load_data_from_json('web13/quotes.json', 'quotes')
+# load_data_from_json('quotes.json', 'quotes')
 
 # Function to search quotes by author name
 
