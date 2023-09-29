@@ -15,6 +15,4 @@ This is a simple Python application for searching and retrieving quotes from a M
 - Run the script using `python quotes_app.py`.
 - Follow the on-screen instructions to search for quotes.
 
-## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
