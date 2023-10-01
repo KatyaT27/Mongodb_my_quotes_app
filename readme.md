@@ -12,7 +12,5 @@ This is a simple Python application for searching and retrieving quotes from a M
 
 ## Usage
 
-- Run the script using `python quotes_app.py`.
+- Run the script using `python main.py`.
 - Follow the on-screen instructions to search for quotes.
-
-
